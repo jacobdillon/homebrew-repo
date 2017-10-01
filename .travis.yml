@@ -1,0 +1,24 @@
+os: osx
+
+before_install:
+  - brew update
+  - brew --env
+  - brew config
+
+install:
+  - mkdir -p $(brew --repo)/Library/Taps/jad340
+  - ln -s $PWD $(brew --repo)/Library/Taps/jad340/homebrew-repo
+  - brew tap --repair
+
+env:
+  - PACKAGE=cgo
+
+script:
+  - brew audit --strict $PACKAGE
+  - brew install $PACKAGE
+  - brew test $PACKAGE
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
