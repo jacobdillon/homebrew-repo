@@ -8,6 +8,12 @@ class Cgo < Formula
   depends_on "telnet"=> :optional
   depends_on "mplayer" => :optional
 
+  # Allows test below to be passed - cgo -v returns an exit code of 1 without it
+  patch do
+    url "https://github.com/jad340/cgo/commit/80d7dc7e7bea16465e66ad7cedb00fbd0dfd3423.patch"
+    sha256 "3a6630091a250550bb7efbacb3fd4a7736b7929d2bc1600821dec2d8be98847b"
+  end
+
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
