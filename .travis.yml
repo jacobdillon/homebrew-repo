@@ -11,12 +11,13 @@ install:
   - brew tap --repair
 
 env:
-  - PACKAGE=cgo
+  - TYPE=FORMULA PACKAGE=cgo
+  - TYPE=CASK PACKAGE=nowplaying
 
 script:
   - brew audit --strict $PACKAGE
-  - brew install $PACKAGE
-  - brew test $PACKAGE
+  - if [ "$TYPE" = "FORMULA" ]; then brew install $PACKAGE && brew test $PACKAGE; fi
+  - if [ "$TYPE" = "CASK" ]; then brew cask install $PACKAGE; fi
 
 notifications:
   email:

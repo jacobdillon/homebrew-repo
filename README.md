@@ -8,6 +8,8 @@ A collection of homebrew formulas for programs I like and use or have made
 ```
 brew tap jad340/repo
 brew install $FORMULA
+brew cask install $CASK
 ```
 Where `$FORMULA` is equal to any of the formulas listed in the `Formula/`
-directory of this tap.
+directory of this tap and `$CASK` is equal to any of the cask formulas listed in
+the `Casks/` directory of this tap.
