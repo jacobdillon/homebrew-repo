@@ -15,9 +15,8 @@ env:
   - TYPE=CASK PACKAGE=nowplaying
 
 script:
-  - brew audit --strict $PACKAGE
   - if [ "$TYPE" = "FORMULA" ]; then brew audit --strict $PACKAGE && brew install $PACKAGE && brew test $PACKAGE; fi
-  - if [ "$TYPE" = "CASK" ]; then brew cask audit --strict $PACKAGE && brew cask install $PACKAGE; fi
+  - if [ "$TYPE" = "CASK" ]; then brew cask audit $PACKAGE && brew cask install $PACKAGE; fi
 
 notifications:
   email:
