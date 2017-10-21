@@ -1,9 +1,9 @@
 class Cgo < Formula
   desc "A terminal based gopher client"
   homepage "https://github.com/kieselsteini/cgo"
-  url "https://github.com/kieselsteini/cgo/archive/ca69bbb.zip"
+  url "https://github.com/kieselsteini/cgo/archive/ca69bbb.tar.gz"
   version "0.4.1"
-  sha256 "b65942dbb0c59a409a304e079aaa1269c059bf4647d4543ed5e947ce6cc49b6b"
+  sha256 "fda68e99e5aaa72198183c19264d61cfaa3e90a16f60c0150e1f79083499d170"
 
   depends_on "telnet"=> :optional
   depends_on "mplayer" => :optional
